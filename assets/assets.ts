@@ -1,3 +1,4 @@
+import header_bg_color from './image/header-bg-color.png'
 import myIcon from './image/my-icon.png'
 import contactArrow from './image/contact-arrow.svg'
 import moonIcon from './image/moon-icon.svg'
@@ -13,6 +14,7 @@ import figma from './image/figma.png'
 import git from './image/git.png'
 
 export const assets = {
+    header_bg_color,
     myIcon,
     contactArrow,
     moonIcon,
