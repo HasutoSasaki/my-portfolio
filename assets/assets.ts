@@ -8,6 +8,9 @@ import codeIcon from './image/code-icon.svg'
 import codeIconDark from './image/code-icon-dark.svg'
 import projectIcon from './image/project-icon.svg'
 import projectIconDark from './image/project-icon-dark.svg'
+import vscode from './image/vscode.png'
+import figma from './image/figma.png'
+import git from './image/git.png'
 
 export const assets = {
     myIcon,
@@ -20,6 +23,9 @@ export const assets = {
     codeIconDark,
     projectIcon,
     projectIconDark,
+    vscode,
+    figma,
+    git,
 }
 
 interface InfoList {
@@ -41,4 +47,10 @@ export const infoList: InfoList[] = [
         title: 'Projects',
         description: 'I have worked on several projects, including web applications and mobile apps.',
     }
+]
+
+export const toolsData = [
+    assets.vscode,
+    assets.figma,
+    assets.git
 ]
