@@ -1,9 +1,9 @@
 import { assets } from '@/assets/assets'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 
 const Navbar = () => {
-
+    const [isScroll, setIsScroll] = useState(false)
     const sideMenuRef = useRef<HTMLUListElement>(null)
 
     const openMenu = () => {
@@ -14,6 +14,18 @@ const Navbar = () => {
         if (!sideMenuRef.current) return
         sideMenuRef.current.style.transform = 'translateX(16rem)'
     }
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (scrollY > 50) {
+                setIsScroll(true)
+            } else {
+                setIsScroll(false)
+            }
+        })
+    }, [])
+
+
 
     const linkList = [
         { name: 'Home', href: '#top' },
@@ -26,7 +38,12 @@ const Navbar = () => {
 
     return (
         <>
-            <nav className='w-full flexed px-5 lg:px-8 xl:px-[8%] py-4 flex items-start justify-between z-50'>
+            <div className='fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]'>
+                <Image src={assets.header_bg_color} alt='' className='w-full' />
+            </div>
+            <nav className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex 
+            items-start justify-between z-50 ${isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm"
+                    : ""}`}>
                 <a href="#top">
                     <Image
                         src={assets.myIcon}
@@ -35,8 +52,8 @@ const Navbar = () => {
                     />
                 </a>
 
-                <ul className='hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3
-                bg-white shadow-sm bg-opacity-50'>
+                <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3
+                ${isScroll ? "" : "bg-white shadow-sm bg-opacity-50"}`}>
                     {linkList.map((link, index) => (
                         <li key={index} className='font-Ovo'>
                             <a href={link.href}>{link.name}</a>
