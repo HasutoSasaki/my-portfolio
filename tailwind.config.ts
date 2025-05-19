@@ -1,7 +1,8 @@
 export default {
     content: [
         "./app/**/*.{js,ts,jsx,tsx}",
-        "./app/components/**/*.{js,ts,jsx,tsx}"
+        "./app/components/**/*.{js,ts,jsx,tsx}",
+        "./app/components/*.{js,ts,jsx,tsx}",
     ],
     theme: {
         extend: {
@@ -13,6 +14,10 @@ export default {
             fontFamily: {
                 Outfit: ['Outfit', 'sans-serif'],
                 Ovo: ['Ovo', 'serif'],
+            },
+            boxShadow: {
+                'black': '4px 4px 0px #000000',
+                'white': '4px 4px 0px #ffffff',
             }
         }
     },
