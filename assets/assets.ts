@@ -7,6 +7,7 @@ import closeIcon from './image/close-icon.svg'
 import profile from './image/profile.png'
 import codeIcon from './image/code-icon.svg'
 import codeIconDark from './image/code-icon-dark.svg'
+import rightArrow from './image/right-arrow.png'
 import projectIcon from './image/project-icon.svg'
 import projectIconDark from './image/project-icon-dark.svg'
 import vscode from './image/vscode.png'
@@ -22,6 +23,7 @@ export const assets = {
     closeIcon,
     profile,
     codeIcon,
+    rightArrow,
     codeIconDark,
     projectIcon,
     projectIconDark,
@@ -48,6 +50,33 @@ export const infoList: InfoList[] = [
         iconDark: assets.projectIconDark,
         title: 'Projects',
         description: 'I have worked on several projects, including web applications and mobile apps.',
+    }
+]
+
+export const serviceData = [
+    {
+        icon: assets.codeIcon,
+        title: 'Web Development',
+        description: 'Building responsive and interactive websites.',
+        link: '#',
+    },
+    {
+        icon: assets.projectIcon,
+        title: 'Mobile Development',
+        description: 'Creating mobile applications for iOS and Android.',
+        link: '#',
+    },
+    {
+        icon: assets.codeIcon,
+        title: 'Backend Development',
+        description: 'Developing server-side applications and APIs.',
+        link: '#',
+    },
+    {
+        icon: assets.projectIcon,
+        title: 'UI/UX Design',
+        description: 'Designing user-friendly interfaces and experiences.',
+        link: '#',
     }
 ]
 
