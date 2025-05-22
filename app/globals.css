@@ -1,6 +1,20 @@
 @import "tailwindcss";
 
+@theme {
+  --color-lightHover: #fcf4ff;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-Ovo: ' Ovo', serif;
+  --grid-cols-auto: repeat(auto-fit, minmax(00px, 1fr));
+}
 
 * {
-  font-family: Outfit;
+  font-family: var(--font-outfit);
+}
+
+.font-Ovo {
+  font-family: var(--font-Ovo);
+}
+
+.grid-cols-auto {
+  grid-template-columns: var(--grid-cols-auto);
 }
