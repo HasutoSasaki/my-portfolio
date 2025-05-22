@@ -8,11 +8,14 @@ import profile from './image/profile.png'
 import codeIcon from './image/code-icon.svg'
 import codeIconDark from './image/code-icon-dark.svg'
 import rightArrow from './image/right-arrow.png'
+import rightArrowBold from './image/right-arrow-bold.png'
 import projectIcon from './image/project-icon.svg'
 import projectIconDark from './image/project-icon-dark.svg'
+import sendIcon from './image/send-icon.png'
 import vscode from './image/vscode.png'
 import figma from './image/figma.png'
 import git from './image/git.png'
+import { title } from 'process'
 
 export const assets = {
     header_bg_color,
@@ -24,9 +27,11 @@ export const assets = {
     profile,
     codeIcon,
     rightArrow,
+    rightArrowBold,
     codeIconDark,
     projectIcon,
     projectIconDark,
+    sendIcon,
     vscode,
     figma,
     git,
@@ -77,6 +82,29 @@ export const serviceData = [
         title: 'UI/UX Design',
         description: 'Designing user-friendly interfaces and experiences.',
         link: '#',
+    }
+]
+
+export const workData = [
+    {
+        title: 'Frontend project',
+        description: 'Mobile App',
+        bgImage: '/work-1.png',
+    },
+    {
+        title: 'Backend project',
+        description: 'Web App',
+        bgImage: '/work-2.png',
+    },
+    {
+        title: 'UI/UX project',
+        description: 'Web App',
+        bgImage: '/work-3.png',
+    },
+    {
+        title: 'Fullstack project',
+        description: 'Web App',
+        bgImage: '/work-4.png',
     }
 ]
 
