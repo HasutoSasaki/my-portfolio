@@ -1,13 +1,14 @@
 import header_bg_color from './image/header-bg-color.png'
 import myIcon from './image/my-icon.png'
 import contactArrow from './image/contact-arrow.svg'
-import moonIcon from './image/moon-icon.svg'
+import moonIcon from './image/moon-icon.png'
 import menuIcon from './image/menu-icon.svg'
 import closeIcon from './image/close-icon.svg'
 import profile from './image/profile.png'
 import codeIcon from './image/code-icon.svg'
 import codeIconDark from './image/code-icon-dark.svg'
 import rightArrow from './image/right-arrow.png'
+import rightArrowWhite from './image/right-arrow-white.png'
 import rightArrowBold from './image/right-arrow-bold.png'
 import projectIcon from './image/project-icon.svg'
 import projectIconDark from './image/project-icon-dark.svg'
@@ -28,6 +29,7 @@ export const assets = {
     codeIcon,
     rightArrow,
     rightArrowBold,
+    rightArrowWhite,
     codeIconDark,
     projectIcon,
     projectIconDark,
