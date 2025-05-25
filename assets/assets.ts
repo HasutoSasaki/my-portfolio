@@ -1,5 +1,7 @@
 import header_bg_color from './image/header-bg-color.png'
 import myIcon from './image/my-icon.png'
+import logo from './image/logo.png'
+import logoDark from './image/logo-dark.png'
 import contactArrow from './image/contact-arrow.svg'
 import moonIcon from './image/moon-icon.png'
 import menuIcon from './image/menu-icon.svg'
@@ -16,11 +18,13 @@ import sendIcon from './image/send-icon.png'
 import vscode from './image/vscode.png'
 import figma from './image/figma.png'
 import git from './image/git.png'
-import { title } from 'process'
+import mailIcon from './image/mail-icon.png'
 
 export const assets = {
     header_bg_color,
     myIcon,
+    logo,
+    logoDark,
     contactArrow,
     moonIcon,
     menuIcon,
@@ -37,6 +41,7 @@ export const assets = {
     vscode,
     figma,
     git,
+    mailIcon
 }
 
 interface InfoList {
