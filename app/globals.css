@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-lightHover: #fcf4ff;
+  --color-darkTheme: #11001f;
   --font-outfit: 'Outfit', sans-serif;
   --font-Ovo: ' Ovo', serif;
   --grid-cols-auto: repeat(auto-fit, minmax(00px, 1fr));
