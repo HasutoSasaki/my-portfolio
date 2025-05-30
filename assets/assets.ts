@@ -2,9 +2,12 @@ import header_bg_color from './image/header-bg-color.png'
 import myIcon from './image/my-icon.png'
 import logo from './image/logo.png'
 import logoDark from './image/logo-dark.png'
-import contactArrow from './image/contact-arrow.svg'
+import contactArrow from './image/arrow-icon.png'
+import contactArrowDark from './image/arrow-icon-dark.png'
 import moonIcon from './image/moon-icon.png'
-import menuIcon from './image/menu-icon.svg'
+import sunIcon from './image/sun-icon.png'
+import menuWhite from './image/menu-white.png'
+import menuBlack from './image/menu-black.png'
 import closeIcon from './image/close-icon.svg'
 import profile from './image/profile.png'
 import codeIcon from './image/code-icon.svg'
@@ -26,8 +29,11 @@ export const assets = {
     logo,
     logoDark,
     contactArrow,
+    contactArrowDark,
     moonIcon,
-    menuIcon,
+    sunIcon,
+    menuWhite,
+    menuBlack,
     closeIcon,
     profile,
     codeIcon,
