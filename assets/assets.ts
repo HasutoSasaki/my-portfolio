@@ -8,13 +8,15 @@ import moonIcon from './image/moon-icon.png'
 import sunIcon from './image/sun-icon.png'
 import menuWhite from './image/menu-white.png'
 import menuBlack from './image/menu-black.png'
-import closeIcon from './image/close-icon.svg'
+import closeBlack from './image/close-black.png'
+import closeWhite from './image/close-white.png'
 import profile from './image/profile.png'
 import codeIcon from './image/code-icon.svg'
 import codeIconDark from './image/code-icon-dark.svg'
 import rightArrow from './image/right-arrow.png'
 import rightArrowWhite from './image/right-arrow-white.png'
 import rightArrowBold from './image/right-arrow-bold.png'
+import rightArrowBoldDark from './image/right-arrow-bold-dark.png'
 import projectIcon from './image/project-icon.svg'
 import projectIconDark from './image/project-icon-dark.svg'
 import sendIcon from './image/send-icon.png'
@@ -22,6 +24,7 @@ import vscode from './image/vscode.png'
 import figma from './image/figma.png'
 import git from './image/git.png'
 import mailIcon from './image/mail-icon.png'
+import mailIconDark from './image/mail-icon-dark.png'
 
 export const assets = {
     header_bg_color,
@@ -34,11 +37,13 @@ export const assets = {
     sunIcon,
     menuWhite,
     menuBlack,
-    closeIcon,
+    closeBlack,
+    closeWhite,
     profile,
     codeIcon,
     rightArrow,
     rightArrowBold,
+    rightArrowBoldDark,
     rightArrowWhite,
     codeIconDark,
     projectIcon,
@@ -47,7 +52,8 @@ export const assets = {
     vscode,
     figma,
     git,
-    mailIcon
+    mailIcon,
+    mailIconDark,
 }
 
 interface InfoList {
