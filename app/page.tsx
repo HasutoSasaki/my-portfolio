@@ -7,6 +7,7 @@ import Services from "./components/Services";
 import Work from "./components/Work";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import SmoothScrollSection from "./components/SmoothScrollSection";
 
 export default function Home() {
 
@@ -34,12 +35,14 @@ export default function Home() {
   return (
     <>
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-      <Header />
-      <About isDarkMode={isDarkMode} />
-      <Services />
-      <Work isDarkMode={isDarkMode} />
-      <Contact />
-      <Footer isDarkMode={isDarkMode} />
+      <SmoothScrollSection>
+        <Header />
+        <About isDarkMode={isDarkMode} />
+        <Services />
+        <Work isDarkMode={isDarkMode} />
+        <Contact />
+        <Footer isDarkMode={isDarkMode} />
+      </SmoothScrollSection>
     </>
   );
 }
