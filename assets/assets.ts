@@ -1,6 +1,6 @@
 import header_bg_color from './image/header-bg-color.png'
 import myIcon from './image/my-icon.png'
-import logo from './image/logo.png'
+import logo from './image/my-icon.png'
 import logoDark from './image/my-icon.png'
 import contactArrow from './image/arrow-icon.png'
 import contactArrowDark from './image/arrow-icon-dark.png'
@@ -22,9 +22,14 @@ import projectIconDark from './image/project-icon-dark.svg'
 import sendIcon from './image/send-icon.png'
 import vscode from './image/vscode.png'
 import figma from './image/figma.png'
+import AWS from './image/aws.png'
 import git from './image/git.png'
 import mailIcon from './image/mail-icon.png'
 import mailIconDark from './image/mail-icon-dark.png'
+import githubIcon from './image/github-mark.svg'
+import githubIconWhite from './image/github-mark-white.svg'
+import xLogoIcon from './image/x-logo-black.png'
+import xLogoIconWhite from './image/x-logo-white.png'
 
 export const assets = {
     header_bg_color,
@@ -52,8 +57,13 @@ export const assets = {
     vscode,
     figma,
     git,
+    AWS,
     mailIcon,
     mailIconDark,
+    githubIcon,
+    githubIconWhite,
+    xLogoIcon,
+    xLogoIconWhite
 }
 
 interface InfoList {
@@ -67,13 +77,13 @@ export const infoList: InfoList[] = [
         icon: assets.codeIcon,
         iconDark: assets.codeIconDark,
         title: 'Language',
-        description: 'HTML, CSS, JavaScript, TypeScript, React, Node.js',
+        description: 'Vue.js, Nuxt.js, JavaScript, TypeScript, Node.js, React.js, Next.js, Tailwind CSS.',
     },
     {
         icon: assets.projectIcon,
         iconDark: assets.projectIconDark,
         title: 'Projects',
-        description: 'I have worked on several projects, including web applications and mobile apps.',
+        description: 'I have worked on various projects including web applications, website development, and framework migrations.',
     }
 ]
 
@@ -106,29 +116,33 @@ export const serviceData = [
 
 export const workData = [
     {
-        title: 'Frontend project',
-        description: 'Mobile App',
+        title: 'Fullstack project',
+        description: 'Web App',
         bgImage: '/work-1.png',
+        link: 'https://initiald.sega.jp/inidac/team/messageboard',
     },
     {
-        title: 'Backend project',
+        title: 'Frontend project',
         description: 'Web App',
         bgImage: '/work-2.png',
-    },
-    {
-        title: 'UI/UX project',
-        description: 'Web App',
-        bgImage: '/work-3.png',
+        link: 'https://initiald.sega.jp/inidac/team/cardmaker/',
     },
     {
         title: 'Fullstack project',
         description: 'Web App',
+        bgImage: '/work-3.png',
+        link: 'https://segaplaza.jp/myfave/'
+    },
+    {
+        title: 'Frontend project',
+        description: 'Web Site',
         bgImage: '/work-4.png',
+        link: 'https://www.segafave.co.jp/'
     }
 ]
 
 export const toolsData = [
     assets.vscode,
-    assets.figma,
-    assets.git
+    assets.git,
+    assets.AWS
 ]
