@@ -38,9 +38,9 @@ export default function Home() {
       <SmoothScrollSection>
         <Header />
         <About isDarkMode={isDarkMode} />
-        <Services />
+        {/* <Services /> */}
         <Work isDarkMode={isDarkMode} />
-        <Contact />
+        {/* <Contact /> */}
         <Footer isDarkMode={isDarkMode} />
       </SmoothScrollSection>
     </>
