@@ -14,9 +14,12 @@ const About = ({ isDarkMode }: { isDarkMode: boolean }) => {
                     <Image src={assets.profile} alt="Profile" className='w-full rounded-3xl' />
                 </div>
                 <div className='flex-1'>
-                    <p>I am an experienced frontend Developer with a decade of professional expertise in the
-                        field. Throughout my career, I have had the privilege of collaborating with
-                        prestigious organizations, contributing too their success and growth.
+                    <p>I am a frontend engineer with two years of professional experience.<br />
+                        Despite my relatively short career, I have been involved in projects where I handled everything
+                        from planning and design to development.<br />
+                        I have also gained experience as a team leader in engineering teams.<br />
+                        I constantly strive to deliver value from both user perspective and engineering standpoint,
+                        while contributing to the overall productivity and quality improvement of the team.
                     </p>
 
                     <ul className='grid grid-cols-1 sm:grid-cols-3 gap-6
