@@ -15,9 +15,13 @@ const Work = ({ isDarkMode }: { isDarkMode: boolean }) => {
 
             <div className='grid grid-cols-auto my-10 gap-5 dark:text-black'>
                 {workData.map((project, index) => (
-                    <div key={index}
+                    <a key={index}
                         className='aspect-square bg-no-repeat bg-cover bg-center rounded-lg
-                        relative cursor-pointer group'
+                        relative cursor-pointer group before:content-[""] before:absolute before:inset-0 
+                        before:bg-gray-500/50  before:rounded-lg hover:before:bg-gray-500/30
+                        before:transition-all before:duration-500'
+                        href={project.link}
+                        target='_blank'
                         style={{ backgroundImage: `url(${project.bgImage})` }}>
                         <div className='bg-white w-10/12 rounded-md absolute bottom-5
                         left-1/2 -translate-x-1/2 py-3 px-5 flex items-center
@@ -32,16 +36,16 @@ const Work = ({ isDarkMode }: { isDarkMode: boolean }) => {
                                 <Image src={assets.sendIcon} alt='send icon' className='w-5' />
                             </div>
                         </div>
-                    </div>
+                    </a>
                 ))}
             </div>
 
-            <a href="" className="w-max flex items-center justify-center gap-2
+            {/* <a href="" className="w-max flex items-center justify-center gap-2
             text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto
             my-20 hover:bg-lightHover duration-500 dark:text-white dark:border-white dark:hover:bg-darkHover">
                 Show more
                 <Image src={isDarkMode ? assets.rightArrowBoldDark : assets.rightArrowBold} alt='right arrow' className='w-4' />
-            </a>
+            </a> */}
         </div>
     )
 }
