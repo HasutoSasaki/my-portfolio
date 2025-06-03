@@ -18,12 +18,10 @@ const Footer = ({ isDarkMode }: { isDarkMode: boolean }) => {
             border-gray-400 mx-[10%] mt-12 py-6'>
                 <p>© 2025 Hasuto Sasaki. All rights reserved.</p>
                 <ul className='flex items-center gap-10 justify-center mt-4 sm:mt-0'>
-                    <li><a target='_blank' href="https://instagra.com/">
-                        GitHub</a></li>
-                    <li><a target='_blank' href="https://instagra.com/">
-                        LinkedIn</a></li>
-                    <li><a target='_blank' href="https://instagra.com/">
-                        Twitter</a></li>
+                    <li><a target='_blank' href="https://github.com/HasutoSasaki/">
+                        <Image src={isDarkMode ? assets.githubIconWhite : assets.githubIcon} alt='GitHub' className='w-6' /></a></li>
+                    <li><a target='_blank' href="https://x.com/vt23358/">
+                        <Image src={isDarkMode ? assets.xLogoIconWhite : assets.xLogoIcon} alt='X' className='w-6' /></a></li>
                 </ul>
             </div>
         </div>
