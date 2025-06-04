@@ -13,6 +13,8 @@ const Header = ({ isDarkMode }: { isDarkMode: boolean }) => {
     const imageBorderRef = useRef(null)
     const greeting = "Hi! I'm Hasuto Sasaki"
     const charRefs = useRef(greeting.split('').map(() => createRef<HTMLSpanElement>()));
+    const heading = "software developer based in Japan.";
+    const headingRefs = useRef(heading.split('').map(() => createRef<HTMLSpanElement>()));
 
     useGSAP(() => {
         const imageTimeline = gsap.timeline();
@@ -61,6 +63,26 @@ const Header = ({ isDarkMode }: { isDarkMode: boolean }) => {
             ease: 'back.out(1.7)',
             delay: 1.3
         });
+
+        // 見出しの文字アニメーションのセットアップ
+        const headingChars = headingRefs.current.map(ref => ref.current);
+        headingChars.forEach((char) => {
+            char?.addEventListener('mouseenter', () => {
+                gsap.to(char, {
+                    rotateY: 360,
+                    duration: 0.7,
+                    ease: 'power2.out'
+                });
+            });
+
+            char?.addEventListener('mouseleave', () => {
+                gsap.to(char, {
+                    rotateY: 0,
+                    duration: 0.7,
+                    ease: 'power2.out'
+                });
+            });
+        });
     });
     return (
         <div className='w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col
@@ -93,7 +115,17 @@ const Header = ({ isDarkMode }: { isDarkMode: boolean }) => {
                 ))}
             </h3>
             <h1 className='text-3xl sm:text-6xl lg-text-[66px] font-Ovo'>
-                software developer based in Japan.</h1>
+                {heading.split('').map((char, index) => (
+                    <span
+                        key={index}
+                        ref={headingRefs.current[index]}
+                        className="inline-block transition-transform hover:cursor-default font-Ovo"
+                        style={{ display: 'inline-block', perspective: '1000px' }}
+                    >
+                        {char === ' ' ? '\u00A0' : char}
+                    </span>
+                ))}
+            </h1>
             <p className='max-w-2xl mx-auto font-Ovo'>
                 I am a software developer from Japan with 2 years experience in an SES company.
             </p>
