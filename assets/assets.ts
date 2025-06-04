@@ -87,6 +87,52 @@ export const infoList: InfoList[] = [
     }
 ]
 
+export const skillsData = [
+    {
+        name: 'Vue.js',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
+        iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
+        color: '#41B883',
+    },
+    {
+        name: 'Nuxt.js',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg',
+        iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg',
+        color: '#00DC82',
+    },
+    {
+        name: 'JavaScript',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+        iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+        color: '#F7DF1E',
+    },
+    {
+        name: 'TypeScript',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+        iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+
+        color: '#007ACC',
+    },
+    {
+        name: 'Node.js',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+        iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+        color: '#339933',
+    },
+    {
+        name: 'Git',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+        iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+        color: '#F05032',
+    },
+    {
+        name: 'AWS',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
+        iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
+        color: '#FF9900',
+    }
+]
+
 export const serviceData = [
     {
         icon: assets.codeIcon,
