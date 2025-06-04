@@ -35,10 +35,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
     const linkList = [
         { name: 'Home', href: '#top' },
         { name: 'About me', href: '#about' },
-        { name: 'Projects', href: '#projects' },
-        { name: 'Skills', href: '#skills' },
-        { name: 'Contact', href: '#contact' },
-        { name: 'Blog', href: '#blog' }
+        { name: 'Work', href: '#work' },
     ]
 
     return (
