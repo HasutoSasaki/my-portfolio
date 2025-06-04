@@ -36,7 +36,7 @@ export default function Home() {
     <>
       <Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <SmoothScrollSection>
-        <Header />
+        <Header isDarkMode={isDarkMode} />
         <About isDarkMode={isDarkMode} />
         {/* <Services /> */}
         {/* <Work /> */}

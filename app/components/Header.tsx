@@ -6,7 +6,7 @@ import { assets } from '@/assets/assets'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 
-const Header = () => {
+const Header = ({ isDarkMode }: { isDarkMode: boolean }) => {
     const messageRef = useRef(null)
     const imageContainerRef = useRef(null)
     const profileImageRef = useRef(null)
@@ -74,7 +74,7 @@ const Header = () => {
                         rx="49"
                         ry="61"
                         fill="none"
-                        stroke="white"
+                        stroke={isDarkMode ? '#fff' : '#000'}
                         strokeWidth="1"
                     />
                 </svg>
