@@ -1,6 +1,12 @@
 import { assets } from '@/assets/assets'
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
+
+// GSAPプラグインを登録
+gsap.registerPlugin(ScrollTrigger);
 
 interface NavbarProps {
     isDarkMode: boolean;
@@ -10,14 +16,80 @@ interface NavbarProps {
 const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
     const [isScroll, setIsScroll] = useState(false)
     const sideMenuRef = useRef<HTMLUListElement>(null)
+    const navbarRef = useRef<HTMLDivElement>(null)
+    const logoRef = useRef<HTMLAnchorElement>(null)
+    const menuRef = useRef<HTMLUListElement>(null)
+    const actionsRef = useRef<HTMLDivElement>(null)
+
+    useGSAP(() => {
+        const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+        // logo animation
+        tl.fromTo(logoRef.current,
+            { y: -50, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.8 }
+        );
+
+        // menu animation
+        tl.fromTo(menuRef.current,
+            { y: -20, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.6 },
+            "-=0.4" // overlap with previous animation
+        );
+
+        // action button animation
+        tl.fromTo(actionsRef.current,
+            { y: -20, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.6 },
+            "-=0.4"
+        );
+
+        // scroll animation
+        ScrollTrigger.create({
+            start: 'top -10%',
+            onEnter: () => {
+                gsap.to(navbarRef.current, {
+                    backgroundColor: isDarkMode ? 'rgba(17, 24, 39, 0.8)' : 'rgba(255, 255, 255, 0.8)',
+                    backdropFilter: 'blur(10px)',
+                    boxShadow: isDarkMode ? '0 4px 6px rgba(255, 255, 255, 0.1)' : '0 4px 6px rgba(0, 0, 0, 0.1)',
+                    duration: 0.3
+                });
+            },
+            onLeaveBack: () => {
+                gsap.to(navbarRef.current, {
+                    backgroundColor: 'transparent',
+                    backdropFilter: 'none',
+                    boxShadow: 'none',
+                    duration: 0.3
+                });
+            }
+        });
+    }, [isDarkMode]);
 
     const openMenu = () => {
         if (!sideMenuRef.current) return
         sideMenuRef.current.style.transform = 'translateX(-16rem'
+
+        // mobile menu open animation
+        gsap.fromTo(sideMenuRef.current.children,
+            { x: 20, opacity: 0 },
+            { x: 0, opacity: 1, stagger: 0.1, delay: 0.2 }
+        );
     }
+
     const closeMenu = () => {
         if (!sideMenuRef.current) return
-        sideMenuRef.current.style.transform = 'translateX(16rem)'
+
+        // animation before closing
+        gsap.to(sideMenuRef.current.children, {
+            x: 20,
+            opacity: 0,
+            stagger: 0.05,
+            duration: 0.3,
+            onComplete: () => {
+                sideMenuRef.current!.style.transform = 'translateX(16rem)'
+            }
+        });
     }
 
     useEffect(() => {
@@ -28,9 +100,12 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
                 setIsScroll(false)
             }
         })
+
+        return () => {
+            // コンポーネントアンマウント時にイベントリスナーを削除
+            window.removeEventListener('scroll', () => { });
+        };
     }, [])
-
-
 
     const linkList = [
         { name: 'Home', href: '#top' },
@@ -44,10 +119,10 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
             dark:hidden'>
                 <Image src={assets.header_bg_color} alt='' className='w-full' />
             </div>
-            <nav className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex 
+            <nav ref={navbarRef} className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex 
             items-start justify-between z-50 ${isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20"
                     : ""}`}>
-                <a href="#top">
+                <a ref={logoRef} href="#top">
                     <Image
                         src={isDarkMode ? assets.logoDark : assets.myIcon}
                         className='w-20 cursor-pointer mr-14'
@@ -55,26 +130,29 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
                     />
                 </a>
 
-                <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3
+                <ul ref={menuRef} className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3
                 ${isScroll ? "" : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"}`}>
                     {linkList.map((link, index) => (
-                        <li key={index} className='font-Ovo'>
+                        <li key={index} className='font-Ovo hover:scale-105 transition-transform'>
                             <a href={link.href}>{link.name}</a>
                         </li>
                     ))}
                 </ul>
 
-                <div className='flex items-center gap-4'>
-
-                    <button onClick={() => setIsDarkMode(!isDarkMode)}>
+                <div ref={actionsRef} className='flex items-center gap-4'>
+                    <button
+                        onClick={() => setIsDarkMode(!isDarkMode)}
+                        className="hover:rotate-12 transition-transform duration-300"
+                    >
                         <Image src={isDarkMode ? assets.sunIcon : assets.moonIcon} alt="moonIcon" className='w-6' />
                     </button>
                     <a href='#contact' className='hidden lg:flex items-center gap-3 px-10
-                    py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo
+                    py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo hover:bg-black/5
+                    hover:scale-105 transition-all duration-300 dark:hover:bg-white/10
                     dark:border-white/50'>Contact
                         <Image className='w-3' src={isDarkMode ? assets.contactArrowDark : assets.contactArrow} alt="Contact Arrow" /></a>
 
-                    <button className='block md:hidden ml-3'
+                    <button className='block md:hidden ml-3 hover:scale-110 transition-transform'
                         onClick={openMenu}>
                         <Image src={isDarkMode ? assets.menuWhite : assets.menuBlack} alt="menu-button" className='w-6' />
                     </button>
@@ -87,11 +165,11 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
 
                     <div className='absolute top-6 right-6' onClick={closeMenu}>
                         <Image src={isDarkMode ? assets.closeWhite : assets.closeBlack} alt='Close Menu'
-                            className='w-5 cursor-pointer' />
+                            className='w-5 cursor-pointer hover:rotate-90 transition-transform duration-300' />
                     </div>
 
                     {linkList.map((link, index) => (
-                        <li key={index} className='font-Ovo' onClick={closeMenu}>
+                        <li key={index} className='font-Ovo hover:translate-x-2 transition-transform duration-300' onClick={closeMenu}>
                             <a href={link.href}>{link.name}</a>
                         </li>
                     ))}
