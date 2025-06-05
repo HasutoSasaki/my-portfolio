@@ -1,19 +1,101 @@
+'use client'
+
 import { assets, skillsData, toolsData } from '@/assets/assets'
-import React from 'react'
+import React, { useRef } from 'react'
 import Image from 'next/image'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
+
+// ScrollTriggerプラグインを登録
+gsap.registerPlugin(ScrollTrigger);
 
 const About = ({ isDarkMode }: { isDarkMode: boolean }) => {
+    const aboutSectionRef = useRef<HTMLDivElement>(null);
+    const profileImageRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+    const skillsRef = useRef<HTMLUListElement>(null);
+    const toolsRef = useRef<HTMLUListElement>(null);
+    const titleRef = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+        // プロフィール画像のパララックス
+        gsap.from(profileImageRef.current, {
+            y: 80,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: aboutSectionRef.current,
+                start: 'top 80%',
+                end: 'top 40%',
+                scrub: 1.5,
+            }
+        });
+
+        // コンテンツのパララックス
+        gsap.from(contentRef.current, {
+            y: 100,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: aboutSectionRef.current,
+                start: 'top 80%',
+                end: 'top 40%',
+                scrub: 1,
+            }
+        });
+
+        // タイトルのパララックス
+        gsap.from(titleRef.current, {
+            y: 40,
+            opacity: 0,
+            scrollTrigger: {
+                trigger: aboutSectionRef.current,
+                start: 'top 90%',
+                end: 'top 60%',
+                scrub: 0.8,
+            }
+        });
+
+        // スキルアイテムのスタッガー表示
+        gsap.from(skillsRef.current?.children || [], {
+            scale: 0.8,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.4,
+            scrollTrigger: {
+                trigger: skillsRef.current,
+                start: 'top 85%',
+                end: 'top 65%',
+                scrub: 1,
+            }
+        });
+
+        // ツールアイテムのスタッガー表示
+        gsap.from(toolsRef.current?.children || [], {
+            y: 20,
+            opacity: 0,
+            stagger: 0.15,
+            scrollTrigger: {
+                trigger: toolsRef.current,
+                start: 'top 85%',
+                end: 'top 65%',
+                scrub: 1,
+            }
+        });
+    });
+
     return (
-        <div id='about' className='w-full px-[12%] py-10
+        <div ref={aboutSectionRef} id='about' className='w-full px-[12%] py-10
         scroll-mt-20'>
-            <h4 className='text-center mb-2 text-lg font-Ovo'>Introduction</h4>
-            <h2 className='text-center text-5xl font-Ovo'>About me</h2>
+            <div ref={titleRef}>
+                <h4 className='text-center mb-2 text-lg font-Ovo'>Introduction</h4>
+                <h2 className='text-center text-5xl font-Ovo'>About me</h2>
+            </div>
 
             <div className='flex w-full flex-col lg:flex-row items-center gap-20 my-20'>
-                <div className='w-64 sm:w-80 rounded-3xl max-w-none'>
+                <div ref={profileImageRef} className='w-64 sm:w-80 rounded-3xl max-w-none'>
                     <Image src={assets.profile} alt="Profile" className='w-full rounded-3xl' />
                 </div>
-                <div className='flex-1'>
+                <div ref={contentRef} className='flex-1'>
                     <p>I am a frontend engineer with two years of professional experience.<br />
                         Despite my relatively short career, I have been involved in projects where I handled everything
                         from planning and design to development.<br />
@@ -22,7 +104,7 @@ const About = ({ isDarkMode }: { isDarkMode: boolean }) => {
                         while contributing to the overall productivity and quality improvement of the team.
                     </p>
 
-                    <ul className='flex flex-wrap items-center gap-3 sm:gap-2 my-6'>
+                    <ul ref={skillsRef} className='flex flex-wrap items-center gap-3 sm:gap-2 my-6'>
                         {skillsData.map((skill, index) => (
                             <li key={index} className='inline-flex items-center gap-2
                             px-3 py-1 rounded-full text-gray-700 dark:text-white/80 dark:border dark:border-white/20'
@@ -35,7 +117,7 @@ const About = ({ isDarkMode }: { isDarkMode: boolean }) => {
 
 
                     <h4 className='my-6 text-gray-700 font-Ovo dark:text-white/80'>Tools I use</h4>
-                    <ul className='flex items-center gap-3 sm:gap-5'>
+                    <ul ref={toolsRef} className='flex items-center gap-3 sm:gap-5'>
                         {toolsData.map((tool, index) => (
                             <li key={index} className='flex items-center justify-center
                             w-12 sm:w-14 aspect-square border border-grey-400

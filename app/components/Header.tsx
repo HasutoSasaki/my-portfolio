@@ -5,12 +5,17 @@ import Image from 'next/image'
 import { assets } from '@/assets/assets'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+// ScrollTriggerプラグインを登録
+gsap.registerPlugin(ScrollTrigger);
 
 const Header = ({ isDarkMode }: { isDarkMode: boolean }) => {
     const messageRef = useRef(null)
     const imageContainerRef = useRef(null)
     const profileImageRef = useRef(null)
     const imageBorderRef = useRef(null)
+    const headerSectionRef = useRef(null)
     const greeting = "Hi! I'm Hasuto Sasaki"
     const charRefs = useRef(greeting.split('').map(() => createRef<HTMLSpanElement>()));
     const heading = "software developer based in Japan.";
@@ -83,9 +88,43 @@ const Header = ({ isDarkMode }: { isDarkMode: boolean }) => {
                 });
             });
         });
+
+        // パララックスアニメーション
+        gsap.to(imageContainerRef.current, {
+            y: -60,
+            scrollTrigger: {
+                trigger: headerSectionRef.current,
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 1.5,
+            }
+        });
+
+        gsap.to(messageRef.current, {
+            y: -40,
+            opacity: 0.7,
+            scrollTrigger: {
+                trigger: headerSectionRef.current,
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 1,
+            }
+        });
+
+        // ヘッディングのパララックス（より遅く移動）
+        gsap.to('h1', {
+            y: -20,
+            opacity: 0.8,
+            scrollTrigger: {
+                trigger: headerSectionRef.current,
+                start: 'top top',
+                end: 'bottom top',
+                scrub: 0.5,
+            }
+        });
     });
     return (
-        <div className='w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col
+        <div ref={headerSectionRef} className='w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col
         items-center justify-center gap-4'>
             <div ref={imageContainerRef} className="relative w-32 h-40 flex items-center justify-center">
                 <svg className="absolute w-full h-full" viewBox="0 0 100 125">
