@@ -188,7 +188,12 @@ export const workData = [
 ]
 
 export const toolsData = [
-    assets.vscode,
-    assets.git,
-    assets.AWS
+    {
+        icon: assets.vscode,
+        iconDark: assets.vscode,
+    },
+    {
+        icon: assets.githubIcon,
+        iconDark: assets.githubIconWhite,
+    },
 ]

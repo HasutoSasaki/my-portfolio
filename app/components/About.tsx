@@ -41,7 +41,7 @@ const About = ({ isDarkMode }: { isDarkMode: boolean }) => {
                             w-12 sm:w-14 aspect-square border border-grey-400
                             rounded-lg cursor-pointer hover:translate-y-1
                             duration-500'>
-                                <Image src={tool} alt='Tool' className='w-5 sm:w-7' />
+                                <Image src={isDarkMode ? tool.iconDark : tool.icon} alt='Tool' className='w-5 sm:w-7' width={20} height={20} />
                             </li>
                         ))}
                     </ul>
