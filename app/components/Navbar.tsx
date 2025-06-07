@@ -49,7 +49,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
             start: 'top -10%',
             onEnter: () => {
                 gsap.to(navbarRef.current, {
-                    backgroundColor: isDarkMode ? 'rgba(17, 24, 39, 0.8)' : 'rgba(255, 255, 255, 0.8)',
+                    backgroundColor: isDarkMode ? 'rgba(17, 24, 39, 0.5)' : 'rgba(255, 255, 255, 0.8)',
                     backdropFilter: 'blur(10px)',
                     boxShadow: isDarkMode ? '0 4px 6px rgba(255, 255, 255, 0.1)' : '0 4px 6px rgba(0, 0, 0, 0.1)',
                     duration: 0.3
