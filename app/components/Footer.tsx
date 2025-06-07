@@ -4,6 +4,7 @@ import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useDraggableLogo } from '@/app/hooks/useDraggableLogo'
 
 if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger)
@@ -16,6 +17,9 @@ const Footer = ({ isDarkMode }: { isDarkMode: boolean }) => {
     const copyrightRef = useRef<HTMLParagraphElement>(null)
     const socialRef = useRef<HTMLUListElement>(null)
     const socialIconsRef = useRef<(HTMLLIElement | null)[]>([])
+
+    // draggable logo hook
+    useDraggableLogo({ logoRef, isDarkMode });
 
     useEffect(() => {
         const ctx = gsap.context(() => {
