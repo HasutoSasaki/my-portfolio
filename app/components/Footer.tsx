@@ -232,7 +232,7 @@ const Footer = ({ isDarkMode }: { isDarkMode: boolean }) => {
 
                 <div
                     ref={emailRef}
-                    className='w-max flex items-center gap-2 mx-auto cursor-pointer'
+                    className='w-max flex items-center gap-2 mx-auto'
                     onMouseEnter={handleEmailHover}
                     onMouseLeave={handleEmailLeave}
                 >
