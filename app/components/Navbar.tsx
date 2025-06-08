@@ -120,17 +120,17 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
                 <Image src={assets.header_bg_color} alt='' className='w-full' />
             </div>
             <nav ref={navbarRef} className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex 
-            items-start justify-between z-50 ${isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20"
+            items-center justify-between z-50 ${isScroll ? "bg-white bg-opacity-50 backdrop-blur-lg shadow-sm dark:bg-darkTheme dark:shadow-white/20"
                     : ""}`}>
-                <a ref={logoRef} href="#top">
+                <a ref={logoRef} href="#top" className="flex-shrink-0">
                     <Image
                         src={isDarkMode ? assets.logoDark : assets.myIcon}
-                        className='w-10 sm:w-20 cursor-pointer mr-10 sm:mr-14'
+                        className='w-10 sm:w-20 cursor-pointer'
                         alt="My Icon"
                     />
                 </a>
 
-                <ul ref={menuRef} className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3
+                <ul ref={menuRef} className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 absolute left-1/2 transform -translate-x-1/2
                 ${isScroll ? "" : "bg-white shadow-sm bg-opacity-50 dark:border dark:border-white/50 dark:bg-transparent"}`}>
                     {linkList.map((link, index) => (
                         <li key={index} className='font-Ovo hover:scale-105 transition-transform'>
@@ -139,18 +139,18 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
                     ))}
                 </ul>
 
-                <div ref={actionsRef} className='flex items-center gap-4'>
+                <div ref={actionsRef} className='flex items-center gap-4 flex-shrink-0'>
                     <button
                         onClick={() => setIsDarkMode(!isDarkMode)}
                         className="hover:rotate-12 transition-transform duration-300"
                     >
                         <Image src={isDarkMode ? assets.sunIcon : assets.moonIcon} alt="moonIcon" className='w-6' />
                     </button>
-                    <a href='#contact' className='hidden lg:flex items-center gap-3 px-10
+                    {/* <a href='#contact' className='hidden lg:flex items-center gap-3 px-10
                     py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo hover:bg-black/5
                     hover:scale-105 transition-all duration-300 dark:hover:bg-white/10
                     dark:border-white/50'>Contact
-                        <Image className='w-3' src={isDarkMode ? assets.contactArrowDark : assets.contactArrow} alt="Contact Arrow" /></a>
+                        <Image className='w-3' src={isDarkMode ? assets.contactArrowDark : assets.contactArrow} alt="Contact Arrow" /></a> */}
 
                     <button className='block md:hidden ml-3 hover:scale-110 transition-transform'
                         onClick={openMenu}>
