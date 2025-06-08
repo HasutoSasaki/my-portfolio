@@ -10,11 +10,11 @@ if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 }
 
-export default function ClientLayout({
+export const SmoothScrollSection = ({
     children,
 }: {
     children: React.ReactNode;
-}) {
+}) => {
     const smootherRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
 

@@ -19,5 +19,3 @@ export const ActionButtons = () => {
         </div>
     )
 }
-
-export default ActionButtons

@@ -7,7 +7,7 @@ import { AboutProfileImage, AboutContent, AboutTitle } from './about/index';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const About = ({ isDarkMode }: { isDarkMode: boolean }) => {
+export const About = ({ isDarkMode }: { isDarkMode: boolean }) => {
     const aboutSectionRef = useRef<HTMLDivElement>(null) as React.RefObject<HTMLDivElement>;
 
     return (
@@ -22,5 +22,3 @@ const About = ({ isDarkMode }: { isDarkMode: boolean }) => {
         </div>
     )
 }
-
-export default About

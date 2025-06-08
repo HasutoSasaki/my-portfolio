@@ -2,7 +2,7 @@ import { assets } from '@/assets/assets'
 import Image from 'next/image'
 import React, { useState } from 'react'
 
-const Contact = () => {
+export const Contact = () => {
 
     const [result, setResult] = useState<string>("");
 
@@ -69,5 +69,3 @@ const Contact = () => {
         </div>
     )
 }
-
-export default Contact

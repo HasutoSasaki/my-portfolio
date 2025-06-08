@@ -10,7 +10,7 @@ if (typeof window !== 'undefined') {
     gsap.registerPlugin(ScrollTrigger)
 }
 
-const Footer = ({ isDarkMode }: { isDarkMode: boolean }) => {
+export const Footer = ({ isDarkMode }: { isDarkMode: boolean }) => {
     const footerRef = useRef<HTMLDivElement>(null)
     const logoRef = useRef<HTMLImageElement>(null)
     const emailRef = useRef<HTMLDivElement>(null)
@@ -284,5 +284,3 @@ const Footer = ({ isDarkMode }: { isDarkMode: boolean }) => {
         </div>
     )
 }
-
-export default Footer

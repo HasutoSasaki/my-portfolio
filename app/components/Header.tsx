@@ -8,7 +8,7 @@ import { ProfileImage, Greeting, Heading, Bio, ActionButtons } from './header/in
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Header = ({ isDarkMode }: { isDarkMode: boolean }) => {
+export const Header = ({ isDarkMode }: { isDarkMode: boolean }) => {
     const headerSectionRef = useRef(null)
 
     useGSAP(() => {
@@ -32,5 +32,3 @@ const Header = ({ isDarkMode }: { isDarkMode: boolean }) => {
         </div>
     )
 }
-
-export default Header

@@ -29,5 +29,3 @@ export const Bio = () => {
         </p>
     )
 }
-
-export default Bio

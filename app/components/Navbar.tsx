@@ -13,7 +13,7 @@ interface NavbarProps {
     setIsDarkMode: (value: boolean) => void;
 }
 
-const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
+export const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
     const [isScroll, setIsScroll] = useState(false)
     const sideMenuRef = useRef<HTMLUListElement>(null)
     const navbarRef = useRef<HTMLDivElement>(null)
@@ -179,5 +179,3 @@ const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
         </>
     )
 }
-
-export default Navbar
