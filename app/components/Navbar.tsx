@@ -110,7 +110,7 @@ export const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
     const linkList = [
         { name: 'Home', href: '#top' },
         { name: 'About me', href: '#about' },
-        { name: 'Work', href: '#work' },
+        // { name: 'Work', href: '#work' },
     ]
 
     return (
