@@ -17,9 +17,9 @@ updates:
       - "dependencies"
       - "npm"
     reviewers:
-      - "sasakihasuto"
+      - "HasutoSasaki"
     assignees:
-      - "sasakihasuto"
+      - "HasutoSasaki"
     allow:
       - dependency-type: "direct"
       - dependency-type: "indirect"
