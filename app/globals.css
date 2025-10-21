@@ -15,6 +15,15 @@
   font-family: var(--font-outfit);
 }
 
+/* パフォーマンス最適化: GPUアクセラレーションを有効化 */
+#smooth-wrapper,
+#smooth-content {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
 .font-Ovo {
   font-family: var(--font-Ovo);
 }

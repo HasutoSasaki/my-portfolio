@@ -33,7 +33,7 @@ export const Heading = () => {
             });
         });
 
-        // ヘッディングのパララックス（より遅く移動）
+        // ヘッディングのパララックス（より遅く移動）- パフォーマンス最適化
         gsap.to('h1', {
             y: -20,
             opacity: 0.8,
@@ -41,7 +41,7 @@ export const Heading = () => {
                 trigger: 'h1',
                 start: 'top top',
                 end: 'bottom top',
-                scrub: 0.5,
+                scrub: true, // 数値ではなくtrueに変更してよりスムーズに
             }
         });
     });
