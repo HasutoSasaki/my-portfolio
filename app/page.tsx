@@ -14,20 +14,18 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    const prefersDark = localStorage.them === 'dark' || (!('them' in localStorage)
+    const prefersDark = localStorage.theme === 'dark' || (!('theme' in localStorage)
       && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    // Initial dark mode detection on client - expected pattern for hydration safety
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsDarkMode(prefersDark);
   }, []);
 
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
-      localStorage.them = 'dark';
+      localStorage.theme = 'dark';
     } else {
       document.documentElement.classList.remove('dark');
-      localStorage.them = '';
+      localStorage.theme = '';
     }
   }, [isDarkMode]);
 
