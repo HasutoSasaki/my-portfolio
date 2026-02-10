@@ -14,12 +14,11 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    if (localStorage.them === 'dark' || (!('them' in localStorage)
-      && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      setIsDarkMode(true);
-    } else {
-      setIsDarkMode(false);
-    }
+    const prefersDark = localStorage.them === 'dark' || (!('them' in localStorage)
+      && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    // Initial dark mode detection on client - expected pattern for hydration safety
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsDarkMode(prefersDark);
   }, []);
 
   useEffect(() => {
