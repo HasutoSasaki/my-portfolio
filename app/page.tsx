@@ -11,13 +11,11 @@ import { SmoothScrollSection } from "./components/SmoothScrollSection";
 
 export default function Home() {
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const prefersDark = localStorage.theme === 'dark' || (!('theme' in localStorage)
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return localStorage.theme === 'dark' || (!('theme' in localStorage)
       && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    setIsDarkMode(prefersDark);
-  }, []);
+  });
 
   useEffect(() => {
     if (isDarkMode) {
