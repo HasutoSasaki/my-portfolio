@@ -2,6 +2,7 @@
   "name": "protfolio",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@10.28.1",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -17,12 +18,11 @@
     "react-dom": "^19.2.3"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4.1.18",
     "@types/node": "^25",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^10",
+    "eslint": "^9.39.2",
     "eslint-config-next": "^16.1.6",
     "tailwindcss": "^4.1.17",
     "typescript": "^5"
