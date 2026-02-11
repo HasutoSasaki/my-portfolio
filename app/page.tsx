@@ -11,11 +11,16 @@ import { SmoothScrollSection } from "./components/SmoothScrollSection";
 
 export default function Home() {
 
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    if (typeof window === 'undefined') return false;
-    return localStorage.theme === 'dark' || (!('theme' in localStorage)
-      && window.matchMedia('(prefers-color-scheme: dark)').matches);
-  });
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const prefersDark =
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches);
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- SSR-safe: must read localStorage after mount
+    setIsDarkMode(prefersDark);
+  }, []);
 
   useEffect(() => {
     if (isDarkMode) {
