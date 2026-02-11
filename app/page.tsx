@@ -14,21 +14,18 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    if (localStorage.them === 'dark' || (!('them' in localStorage)
-      && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      setIsDarkMode(true);
-    } else {
-      setIsDarkMode(false);
-    }
+    const prefersDark = localStorage.theme === 'dark' || (!('theme' in localStorage)
+      && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    setIsDarkMode(prefersDark);
   }, []);
 
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add('dark');
-      localStorage.them = 'dark';
+      localStorage.theme = 'dark';
     } else {
       document.documentElement.classList.remove('dark');
-      localStorage.them = '';
+      localStorage.theme = '';
     }
   }, [isDarkMode]);
 

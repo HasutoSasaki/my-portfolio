@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, createRef } from 'react'
+import { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -10,11 +10,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 export const Heading = () => {
     const heading = "software developer based in Japan.";
-    const headingRefs = useRef(heading.split('').map(() => createRef<HTMLSpanElement>()));
+    const headingRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
     useGSAP(() => {
         // 見出しの文字アニメーションのセットアップ
-        const headingChars = headingRefs.current.map(ref => ref.current);
+        const headingChars = headingRefs.current.filter(Boolean);
         headingChars.forEach((char) => {
             char?.addEventListener('mouseenter', () => {
                 gsap.to(char, {
@@ -51,7 +51,7 @@ export const Heading = () => {
             {heading.split('').map((char, index) => (
                 <span
                     key={index}
-                    ref={headingRefs.current[index]}
+                    ref={(el) => { headingRefs.current[index] = el; }}
                     className="inline-block transition-transform hover:cursor-default font-Ovo"
                     style={{ display: 'inline-block', perspective: '1000px' }}
                 >

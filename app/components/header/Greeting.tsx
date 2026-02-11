@@ -1,17 +1,17 @@
 'use client'
 
-import { useRef, createRef } from 'react'
+import { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 
 export const Greeting = () => {
     const messageRef = useRef(null)
     const greeting = "Hi! I'm Hasuto Sasaki"
-    const charRefs = useRef(greeting.split('').map(() => createRef<HTMLSpanElement>()));
+    const charRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
     useGSAP(() => {
         // 各文字に対するアニメーション
-        const chars = charRefs.current.map(ref => ref.current);
+        const chars = charRefs.current.filter(Boolean);
         gsap.set(chars, { opacity: 0, scale: 0, x: -50 });
         gsap.to(chars, {
             opacity: 1,
@@ -39,7 +39,7 @@ export const Greeting = () => {
     return (
         <h3 ref={messageRef} className='flex items-end gap-2 text-xl md:text-2xl mb-3 font-Ovo'>
             {greeting.split('').map((char, index) => (
-                <span key={index} ref={charRefs.current[index]} className="inline-block font-Ovo">
+                <span key={index} ref={(el) => { charRefs.current[index] = el; }} className="inline-block font-Ovo">
                     {char === ' ' ? '\u00A0' : char}
                 </span>
             ))}
