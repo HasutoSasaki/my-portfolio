@@ -19,14 +19,14 @@ export const SmoothScrollSection = ({
     const contentRef = useRef<HTMLDivElement>(null);
 
     useLayoutEffect(() => {
-        // スムーズスクロールの初期化
+        // スムーズスクロールの初期化 - パフォーマンス最適化版
         const smoother = ScrollSmoother.create({
             wrapper: smootherRef.current,
             content: contentRef.current,
-            smooth: 1.5, // スクロールの滑らかさ（値が大きいほどぬるっとする）
-            effects: true, // data-speed属性などを有効にする
+            smooth: 0.8, // より低い値でパフォーマンスを改善
+            effects: false, // data-speed属性を無効化してパフォーマンス向上
             normalizeScroll: true, // タッチデバイスでも動作を統一
-            smoothTouch: 0.1, // タッチデバイス用の設定（0で無効、小さい値でよりスムーズに）
+            smoothTouch: 0, // タッチデバイスでは無効化してパフォーマンス向上
         });
 
         return () => {
