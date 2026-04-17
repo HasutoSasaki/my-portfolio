@@ -25,6 +25,12 @@ jobs:
           node-version: 24
           cache: pnpm
 
+      - run: |
+          echo "pnpm version: $(pnpm --version)"
+          which pnpm
+          pnpm config get minimumReleaseAge || true
+          head -1 pnpm-lock.yaml
+          grep -c '^---$' pnpm-lock.yaml || true
       - run: pnpm install --frozen-lockfile
       - run: pnpm run lint
 
@@ -42,5 +48,11 @@ jobs:
           node-version: 24
           cache: pnpm
 
+      - run: |
+          echo "pnpm version: $(pnpm --version)"
+          which pnpm
+          pnpm config get minimumReleaseAge || true
+          head -1 pnpm-lock.yaml
+          grep -c '^---$' pnpm-lock.yaml || true
       - run: pnpm install --frozen-lockfile
       - run: pnpm run build
