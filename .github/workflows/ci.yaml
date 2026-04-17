@@ -16,10 +16,20 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - run: |
+          echo "AFTER_CHECKOUT head: $(head -1 pnpm-lock.yaml)"
+          echo "AFTER_CHECKOUT dashes: $(grep -c '^---$' pnpm-lock.yaml || true)"
+          echo "AFTER_CHECKOUT md5: $(md5sum pnpm-lock.yaml)"
+
       - uses: pnpm/action-setup@v6
         with:
           version: 10.28.1
           standalone: true
+
+      - run: |
+          echo "AFTER_PNPM_SETUP head: $(head -1 pnpm-lock.yaml)"
+          echo "AFTER_PNPM_SETUP dashes: $(grep -c '^---$' pnpm-lock.yaml || true)"
+          echo "AFTER_PNPM_SETUP md5: $(md5sum pnpm-lock.yaml)"
 
       - uses: actions/setup-node@v6
         with:
@@ -27,11 +37,9 @@ jobs:
           cache: pnpm
 
       - run: |
-          echo "pnpm version: $(pnpm --version)"
-          which pnpm
-          pnpm config get minimumReleaseAge || true
-          head -1 pnpm-lock.yaml
-          grep -c '^---$' pnpm-lock.yaml || true
+          echo "AFTER_NODE_SETUP head: $(head -1 pnpm-lock.yaml)"
+          echo "AFTER_NODE_SETUP dashes: $(grep -c '^---$' pnpm-lock.yaml || true)"
+          echo "AFTER_NODE_SETUP md5: $(md5sum pnpm-lock.yaml)"
       - run: pnpm install --frozen-lockfile
       - run: pnpm run lint
 
@@ -40,10 +48,20 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - run: |
+          echo "AFTER_CHECKOUT head: $(head -1 pnpm-lock.yaml)"
+          echo "AFTER_CHECKOUT dashes: $(grep -c '^---$' pnpm-lock.yaml || true)"
+          echo "AFTER_CHECKOUT md5: $(md5sum pnpm-lock.yaml)"
+
       - uses: pnpm/action-setup@v6
         with:
           version: 10.28.1
           standalone: true
+
+      - run: |
+          echo "AFTER_PNPM_SETUP head: $(head -1 pnpm-lock.yaml)"
+          echo "AFTER_PNPM_SETUP dashes: $(grep -c '^---$' pnpm-lock.yaml || true)"
+          echo "AFTER_PNPM_SETUP md5: $(md5sum pnpm-lock.yaml)"
 
       - uses: actions/setup-node@v6
         with:
@@ -51,10 +69,8 @@ jobs:
           cache: pnpm
 
       - run: |
-          echo "pnpm version: $(pnpm --version)"
-          which pnpm
-          pnpm config get minimumReleaseAge || true
-          head -1 pnpm-lock.yaml
-          grep -c '^---$' pnpm-lock.yaml || true
+          echo "AFTER_NODE_SETUP head: $(head -1 pnpm-lock.yaml)"
+          echo "AFTER_NODE_SETUP dashes: $(grep -c '^---$' pnpm-lock.yaml || true)"
+          echo "AFTER_NODE_SETUP md5: $(md5sum pnpm-lock.yaml)"
       - run: pnpm install --frozen-lockfile
       - run: pnpm run build
