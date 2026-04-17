@@ -32,10 +32,12 @@ export const AboutContent = ({ isDarkMode, parentRef }: AboutContentProps) => {
 
     return (
         <div ref={contentRef} className='flex-1'>
-            <p>I am a frontend engineer with two years of professional experience.<br />
-                Despite my relatively short career, I have been involved in projects where I handled everything
-                from planning and design to development.<br />
-                I have also gained experience as a team leader in engineering teams.<br />
+            <p>I am a software engineer at Classmethod, building web applications with
+                React and TypeScript on the frontend and an AWS serverless stack
+                (Lambda, DynamoDB, CDK) on the backend.<br />
+                Before joining Classmethod, I spent two years as a frontend engineer at
+                an SES company, where I handled projects end-to-end from planning and
+                design to development, and also led engineering teams.<br />
                 I constantly strive to deliver value from both user perspective and engineering standpoint,
                 while contributing to the overall productivity and quality improvement of the team.
             </p>

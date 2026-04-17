@@ -77,7 +77,7 @@ export const infoList: InfoList[] = [
         icon: assets.codeIcon,
         iconDark: assets.codeIconDark,
         title: 'Language',
-        description: 'Vue.js, Nuxt.js, JavaScript, TypeScript, Node.js, React.js, Next.js, Tailwind CSS.',
+        description: 'React, Next.js, TypeScript, JavaScript, Node.js, Tailwind CSS, Vue.js, Nuxt.js.',
     },
     {
         icon: assets.projectIcon,
@@ -88,6 +88,30 @@ export const infoList: InfoList[] = [
 ]
 
 export const skillsData = [
+    {
+        name: 'React',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+        color: '#61DAFB',
+    },
+    {
+        name: 'Next.js',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+        iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-plain.svg',
+        color: '#000000',
+    },
+    {
+        name: 'TypeScript',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+        iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+        color: '#007ACC',
+    },
+    {
+        name: 'JavaScript',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+        iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+        color: '#F7DF1E',
+    },
     {
         name: 'Vue.js',
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg',
@@ -101,35 +125,22 @@ export const skillsData = [
         color: '#00DC82',
     },
     {
-        name: 'JavaScript',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-        iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-        color: '#F7DF1E',
-    },
-    {
-        name: 'TypeScript',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-        iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-
-        color: '#007ACC',
-    },
-    {
         name: 'Node.js',
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
         iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
         color: '#339933',
     },
     {
-        name: 'Git',
-        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-        iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-        color: '#F05032',
-    },
-    {
         name: 'AWS',
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
         iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg',
         color: '#FF9900',
+    },
+    {
+        name: 'Git',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+        iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+        color: '#F05032',
     }
 ]
 
