@@ -39,7 +39,10 @@ jobs:
           echo "AFTER_NODE_SETUP head: $(head -1 pnpm-lock.yaml)"
           echo "AFTER_NODE_SETUP dashes: $(grep -c '^---$' pnpm-lock.yaml || true)"
           echo "AFTER_NODE_SETUP md5: $(md5sum pnpm-lock.yaml)"
-      - run: pnpm install --frozen-lockfile
+      - run: |
+          echo "BEFORE_INSTALL head: $(head -1 pnpm-lock.yaml)"
+          echo "BEFORE_INSTALL md5: $(md5sum pnpm-lock.yaml)"
+          pnpm install --frozen-lockfile || (echo "INSTALL_FAILED head after: $(head -1 pnpm-lock.yaml)"; echo "INSTALL_FAILED md5 after: $(md5sum pnpm-lock.yaml)"; echo "INSTALL_FAILED dashes: $(grep -c '^---$' pnpm-lock.yaml)"; exit 1)
       - run: pnpm run lint
 
   build:
@@ -70,5 +73,8 @@ jobs:
           echo "AFTER_NODE_SETUP head: $(head -1 pnpm-lock.yaml)"
           echo "AFTER_NODE_SETUP dashes: $(grep -c '^---$' pnpm-lock.yaml || true)"
           echo "AFTER_NODE_SETUP md5: $(md5sum pnpm-lock.yaml)"
-      - run: pnpm install --frozen-lockfile
+      - run: |
+          echo "BEFORE_INSTALL head: $(head -1 pnpm-lock.yaml)"
+          echo "BEFORE_INSTALL md5: $(md5sum pnpm-lock.yaml)"
+          pnpm install --frozen-lockfile || (echo "INSTALL_FAILED head after: $(head -1 pnpm-lock.yaml)"; echo "INSTALL_FAILED md5 after: $(md5sum pnpm-lock.yaml)"; echo "INSTALL_FAILED dashes: $(grep -c '^---$' pnpm-lock.yaml)"; exit 1)
       - run: pnpm run build
