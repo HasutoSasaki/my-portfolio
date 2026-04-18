@@ -25,7 +25,7 @@ export const Bio = () => {
 
     return (
         <p ref={bioRef} className='max-w-2xl mx-auto font-Ovo'>
-            I am a software developer from Japan with 2 years experience in an SES company.
+            I am a software engineer at Classmethod, based in Japan.
         </p>
     )
 }
