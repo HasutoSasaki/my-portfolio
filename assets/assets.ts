@@ -77,7 +77,7 @@ export const infoList: InfoList[] = [
         icon: assets.codeIcon,
         iconDark: assets.codeIconDark,
         title: 'Language',
-        description: 'React, Next.js, TypeScript, JavaScript, Node.js, Tailwind CSS, Vue.js, Nuxt.js.',
+        description: 'React, Next.js, TypeScript, JavaScript, Vue.js, Nuxt.js, Node.js, AWS, Git.',
     },
     {
         icon: assets.projectIcon,
@@ -97,7 +97,7 @@ export const skillsData = [
     {
         name: 'Next.js',
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
-        iconDark: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-plain.svg',
+        iconDark: 'https://cdn.simpleicons.org/nextdotjs/white',
         color: '#000000',
     },
     {
