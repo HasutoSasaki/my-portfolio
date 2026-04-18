@@ -14,69 +14,49 @@ export const AboutProfileImage = ({ parentRef }: { parentRef: React.RefObject<HT
     const particlesRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
-        // 元のプロフィール画像は最初から非表示
-        gsap.set(profileImageRef.current, {
-            opacity: 0
+        if (!particlesRef.current) return;
+
+        const particles = particlesRef.current.querySelectorAll<HTMLDivElement>('.particle');
+
+        gsap.set(profileImageRef.current, { opacity: 0 });
+
+        // Stash per-particle random starting offsets once so the tween can animate
+        // every particle back to (0,0) through a single ScrollTrigger — replacing
+        // 400 individual ScrollTrigger instances that recalculated on every scroll.
+        particles.forEach((particle) => {
+            const angle = (Math.random() - 0.5) * 2 * Math.PI;
+            const distance = 150 + Math.random() * 200;
+            gsap.set(particle, {
+                x: distance * Math.cos(angle),
+                y: distance * Math.sin(angle),
+                rotation: (Math.random() - 0.5) * 360,
+                opacity: 0,
+                scale: 0.3,
+                force3D: true,
+                willChange: 'transform, opacity',
+            });
         });
 
-        // パーティクルエフェクト - 周りから集まって画像を形成
-        if (particlesRef.current) {
-            const particles = particlesRef.current.querySelectorAll('.particle');
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: parentRef.current,
+                start: 'center 80%',
+                end: 'center 20%',
+                scrub: 0.8,
+            }
+        });
 
-            particles.forEach((particle, index) => {
-                const randomAngle = (Math.random() - 0.5) * 2 * Math.PI;
-                const randomDistance = 150 + Math.random() * 200;
-                const randomRotation = (Math.random() - 0.5) * 360;
-                const randomDelay = index * 0.005;
-
-                // 初期状態：散らばった位置に配置
-                gsap.set(particle, {
-                    x: randomDistance * Math.cos(randomAngle),
-                    y: randomDistance * Math.sin(randomAngle),
-                    rotation: randomRotation,
-                    opacity: 0,
-                    scale: 0.3,
-                });
-
-                // アニメーション：元の位置に集まる
-                gsap.to(particle, {
-                    x: 0,
-                    y: 0,
-                    rotation: 0,
-                    opacity: 1,
-                    scale: 1,
-                    duration: 0.6,
-                    delay: randomDelay,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: parentRef.current,
-                        start: 'center 80%',
-                        end: 'center 45%',
-                        scrub: 0.8,
-                    }
-                });
-            });
-
-            // パーティクル完成後、元の画像をフェードインしながらパーティクルをフェードアウト
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                    trigger: parentRef.current,
-                    start: 'center 50%', // パーティクル完了直後
-                    end: 'center 20%', // 短い距離で切り替え
-                    scrub: 0.5,
-                }
-            });
-
-            // 元画像のフェードインとパーティクルのフェードアウトを同時実行
-            tl.to(profileImageRef.current, {
-                opacity: 1,
-                duration: 0.3,
-            }, 0)
-                .to(particlesRef.current, {
-                    opacity: 0,
-                    duration: 0.3,
-                }, 0);
-        }
+        tl.to(particles, {
+            x: 0,
+            y: 0,
+            rotation: 0,
+            opacity: 1,
+            scale: 1,
+            ease: 'power3.out',
+            stagger: { amount: 0.6, from: 'random' },
+        }, 0)
+            .to(profileImageRef.current, { opacity: 1, duration: 0.2 }, '>-0.2')
+            .to(particlesRef.current, { opacity: 0, duration: 0.2 }, '<');
     }, [parentRef]);
 
     const generateParticles = () => {
