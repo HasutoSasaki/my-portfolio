@@ -271,7 +271,7 @@ export const Footer = ({ isDarkMode }: { isDarkMode: boolean }) => {
                         onMouseLeave={() => handleSocialLeave(1)}
                         className="cursor-pointer"
                     >
-                        <a target='_blank' href="https://x.com/vt23358/">
+                        <a target='_blank' href="https://x.com/hasuto00">
                             <Image
                                 src={isDarkMode ? assets.xLogoIconWhite : assets.xLogoIcon}
                                 alt='X'
