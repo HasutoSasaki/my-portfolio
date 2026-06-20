@@ -67,8 +67,8 @@ export const assets = {
 };
 
 interface InfoList {
-  icon: string;
-  iconDark: string;
+  icon: import("next/image").StaticImageData;
+  iconDark: import("next/image").StaticImageData;
   title: string;
   description: string;
 }
