@@ -1,34 +1,37 @@
-'use client'
+"use client";
 
-import { useRef } from 'react'
-import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ProfileImage, Greeting, Heading, Bio, ActionButtons } from './header/index'
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ProfileImage, Greeting, Heading, Bio, ActionButtons } from "./header/index";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export const Header = ({ isDarkMode }: { isDarkMode: boolean }) => {
-    const headerSectionRef = useRef(null)
+  const headerSectionRef = useRef(null);
 
-    useGSAP(() => {
-        // parallax animation
-        ScrollTrigger.create({
-            trigger: headerSectionRef.current,
-            start: 'top top',
-            end: 'bottom top',
-            scrub: 1
-        });
+  useGSAP(() => {
+    // parallax animation
+    ScrollTrigger.create({
+      trigger: headerSectionRef.current,
+      start: "top top",
+      end: "bottom top",
+      scrub: 1,
     });
+  });
 
-    return (
-        <div ref={headerSectionRef} className='w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col
-        items-center justify-center gap-4'>
-            <ProfileImage isDarkMode={isDarkMode} />
-            <Greeting />
-            <Heading />
-            <Bio />
-            <ActionButtons />
-        </div>
-    )
-}
+  return (
+    <div
+      ref={headerSectionRef}
+      className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col
+        items-center justify-center gap-4"
+    >
+      <ProfileImage isDarkMode={isDarkMode} />
+      <Greeting />
+      <Heading />
+      <Bio />
+      <ActionButtons />
+    </div>
+  );
+};
