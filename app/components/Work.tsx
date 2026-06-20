@@ -15,8 +15,9 @@ export const Work = () => {
         {workData.map((project, index) => (
           <a
             key={index}
+            aria-label={project.title}
             className='aspect-square bg-no-repeat bg-cover bg-center rounded-lg
-                        relative cursor-pointer group before:content-[""] before:absolute before:inset-0 
+                        relative cursor-pointer group before:content-[""] before:absolute before:inset-0
                         before:bg-gray-500/50  before:rounded-lg hover:before:bg-gray-500/30
                         before:transition-all before:duration-500'
             href={project.link}
