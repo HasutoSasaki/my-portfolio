@@ -95,17 +95,14 @@ export const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (scrollY > 50) {
-        setIsScroll(true);
-      } else {
-        setIsScroll(false);
-      }
-    });
+    const handleScroll = () => {
+      setIsScroll(scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      // コンポーネントアンマウント時にイベントリスナーを削除
-      window.removeEventListener("scroll", () => {});
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -188,21 +185,27 @@ export const Navbar = ({ isDarkMode, setIsDarkMode }: NavbarProps) => {
                 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500
                 dark:bg-darkHover dark:text-white"
         >
-          <div className="absolute top-6 right-6" onClick={closeMenu}>
+          <button
+            type="button"
+            aria-label="Close menu"
+            className="absolute top-6 right-6"
+            onClick={closeMenu}
+          >
             <Image
               src={isDarkMode ? assets.closeWhite : assets.closeBlack}
-              alt="Close Menu"
+              alt=""
               className="w-5 cursor-pointer hover:rotate-90 transition-transform duration-300"
             />
-          </div>
+          </button>
 
           {linkList.map((link, index) => (
             <li
               key={index}
               className="font-Ovo hover:translate-x-2 transition-transform duration-300"
-              onClick={closeMenu}
             >
-              <a href={link.href}>{link.name}</a>
+              <a href={link.href} onClick={closeMenu}>
+                {link.name}
+              </a>
             </li>
           ))}
         </ul>
