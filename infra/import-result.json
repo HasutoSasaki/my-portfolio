@@ -1,0 +1,313 @@
+{
+  "verifiedAt": "2026-09-27T22:05:42+09:00",
+  "account": "078072735979",
+  "region": "ap-northeast-1",
+  "stackName": "MyPortfolioSandbox",
+  "stackId": "arn:aws:cloudformation:ap-northeast-1:078072735979:stack/MyPortfolioSandbox/31285c10-ba73-11f1-98a3-0a855e25cc89",
+  "stackStatus": "IMPORT_COMPLETE",
+  "changeSet": {
+    "id": "arn:aws:cloudformation:ap-northeast-1:078072735979:changeSet/portfolio-import/863da244-893e-483c-8f1a-868c5aa90042",
+    "type": "IMPORT",
+    "actions": [
+      {
+        "action": "Import",
+        "logicalId": "RedirectBucket",
+        "physicalId": "hasutosasaki.com",
+        "type": "AWS::S3::Bucket"
+      },
+      {
+        "action": "Import",
+        "logicalId": "RedirectDistribution",
+        "physicalId": "E2WBVFFV91A2DU",
+        "type": "AWS::CloudFront::Distribution"
+      },
+      {
+        "action": "Import",
+        "logicalId": "SiteBucketPolicy",
+        "physicalId": "www.hasutosasaki.com",
+        "type": "AWS::S3::BucketPolicy"
+      },
+      {
+        "action": "Import",
+        "logicalId": "SiteBucket",
+        "physicalId": "www.hasutosasaki.com",
+        "type": "AWS::S3::Bucket"
+      },
+      {
+        "action": "Import",
+        "logicalId": "SiteDistribution",
+        "physicalId": "E1DZXZ1TJCQU0K",
+        "type": "AWS::CloudFront::Distribution"
+      },
+      {
+        "action": "Import",
+        "logicalId": "SiteOriginAccessControl",
+        "physicalId": "E163VYBXXAXG8G",
+        "type": "AWS::CloudFront::OriginAccessControl"
+      }
+    ]
+  },
+  "resources": [
+    {
+      "LogicalId": "RedirectBucket",
+      "PhysicalId": "hasutosasaki.com",
+      "Type": "AWS::S3::Bucket",
+      "Status": "UPDATE_COMPLETE"
+    },
+    {
+      "LogicalId": "RedirectDistribution",
+      "PhysicalId": "E2WBVFFV91A2DU",
+      "Type": "AWS::CloudFront::Distribution",
+      "Status": "UPDATE_COMPLETE"
+    },
+    {
+      "LogicalId": "SiteBucket",
+      "PhysicalId": "www.hasutosasaki.com",
+      "Type": "AWS::S3::Bucket",
+      "Status": "UPDATE_COMPLETE"
+    },
+    {
+      "LogicalId": "SiteBucketPolicy",
+      "PhysicalId": "www.hasutosasaki.com",
+      "Type": "AWS::S3::BucketPolicy",
+      "Status": "UPDATE_COMPLETE"
+    },
+    {
+      "LogicalId": "SiteDistribution",
+      "PhysicalId": "E1DZXZ1TJCQU0K",
+      "Type": "AWS::CloudFront::Distribution",
+      "Status": "UPDATE_COMPLETE"
+    },
+    {
+      "LogicalId": "SiteOriginAccessControl",
+      "PhysicalId": "E163VYBXXAXG8G",
+      "Type": "AWS::CloudFront::OriginAccessControl",
+      "Status": "UPDATE_COMPLETE"
+    }
+  ],
+  "drift": {
+    "StackId": "arn:aws:cloudformation:ap-northeast-1:078072735979:stack/MyPortfolioSandbox/31285c10-ba73-11f1-98a3-0a855e25cc89",
+    "StackDriftDetectionId": "88059a70-ba73-11f1-af3e-0afff9267df1",
+    "StackDriftStatus": "IN_SYNC",
+    "DetectionStatus": "DETECTION_COMPLETE",
+    "DriftedStackResourceCount": 0,
+    "Timestamp": "2026-09-27T13:01:19.127000+00:00",
+    "resources": [
+      {
+        "logicalId": "RedirectBucket",
+        "physicalId": "hasutosasaki.com",
+        "status": "IN_SYNC",
+        "differences": []
+      },
+      {
+        "logicalId": "RedirectDistribution",
+        "physicalId": "E2WBVFFV91A2DU",
+        "status": "IN_SYNC",
+        "differences": []
+      },
+      {
+        "logicalId": "SiteBucket",
+        "physicalId": "www.hasutosasaki.com",
+        "status": "IN_SYNC",
+        "differences": []
+      },
+      {
+        "logicalId": "SiteDistribution",
+        "physicalId": "E1DZXZ1TJCQU0K",
+        "status": "IN_SYNC",
+        "differences": []
+      },
+      {
+        "logicalId": "SiteOriginAccessControl",
+        "physicalId": "E163VYBXXAXG8G",
+        "status": "IN_SYNC",
+        "differences": []
+      }
+    ],
+    "bucketPolicy": {
+      "supported": false,
+      "separatelyComparedToInventory": true,
+      "unchanged": true
+    }
+  },
+  "cdkDiff": {
+    "exitCode": 0,
+    "stacksWithDifferences": 0
+  },
+  "configurationComparisons": [
+    {
+      "label": "site CloudFront settings",
+      "unchanged": true
+    },
+    {
+      "label": "redirect CloudFront settings",
+      "unchanged": true
+    },
+    {
+      "label": "OAC",
+      "unchanged": true
+    },
+    {
+      "label": "www.hasutosasaki.com encryption",
+      "unchanged": true
+    },
+    {
+      "label": "www.hasutosasaki.com publicAccessBlock",
+      "unchanged": true
+    },
+    {
+      "label": "www.hasutosasaki.com ownership",
+      "unchanged": true
+    },
+    {
+      "label": "www.hasutosasaki.com logging",
+      "unchanged": true
+    },
+    {
+      "label": "www.hasutosasaki.com versioning",
+      "unchanged": true
+    },
+    {
+      "label": "www.hasutosasaki.com website",
+      "unchanged": true
+    },
+    {
+      "label": "www.hasutosasaki.com policy",
+      "unchanged": true
+    },
+    {
+      "label": "hasutosasaki.com encryption",
+      "unchanged": true
+    },
+    {
+      "label": "hasutosasaki.com publicAccessBlock",
+      "unchanged": true
+    },
+    {
+      "label": "hasutosasaki.com ownership",
+      "unchanged": true
+    },
+    {
+      "label": "hasutosasaki.com logging",
+      "unchanged": true
+    },
+    {
+      "label": "hasutosasaki.com versioning",
+      "unchanged": true
+    },
+    {
+      "label": "hasutosasaki.com website",
+      "unchanged": true
+    },
+    {
+      "label": "hasutosasaki.com policy",
+      "unchanged": true
+    },
+    {
+      "label": "DNS",
+      "unchanged": true
+    },
+    {
+      "label": "index.html",
+      "unchanged": true
+    },
+    {
+      "label": "six physical IDs",
+      "unchanged": true
+    },
+    {
+      "label": "site CloudFront domain",
+      "unchanged": true
+    },
+    {
+      "label": "redirect CloudFront domain",
+      "unchanged": true
+    },
+    {
+      "label": "www.hasutosasaki.com cors",
+      "unchanged": true
+    },
+    {
+      "label": "www.hasutosasaki.com lifecycle-configuration",
+      "unchanged": true
+    },
+    {
+      "label": "hasutosasaki.com cors",
+      "unchanged": true
+    },
+    {
+      "label": "hasutosasaki.com lifecycle-configuration",
+      "unchanged": true
+    }
+  ],
+  "publicEndpoints": [
+    {
+      "url": "https://www.hasutosasaki.com/",
+      "method": "HEAD",
+      "status": 200,
+      "contentLength": 115526,
+      "etag": "\"658e9dcb2f250d9f77f8c224098d1301\""
+    },
+    {
+      "url": "https://hasutosasaki.com/",
+      "method": "HEAD",
+      "status": 301,
+      "location": "https://www.hasutosasaki.com/"
+    }
+  ],
+  "siteContent": {
+    "bucket": "www.hasutosasaki.com",
+    "key": "index.html",
+    "unchanged": true,
+    "AcceptRanges": "bytes",
+    "LastModified": "2025-06-08T06:32:31+00:00",
+    "ContentLength": 115526,
+    "ETag": "\"658e9dcb2f250d9f77f8c224098d1301\"",
+    "ContentType": "text/html",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {}
+  },
+  "managementTags": {
+    "www.hasutosasaki.com": [
+      {
+        "Key": "aws:cloudformation:stack-id",
+        "Value": "arn:aws:cloudformation:ap-northeast-1:078072735979:stack/MyPortfolioSandbox/31285c10-ba73-11f1-98a3-0a855e25cc89"
+      },
+      {
+        "Key": "aws:cloudformation:stack-name",
+        "Value": "MyPortfolioSandbox"
+      },
+      {
+        "Key": "aws:cloudformation:logical-id",
+        "Value": "SiteBucket"
+      }
+    ],
+    "hasutosasaki.com": [
+      {
+        "Key": "aws:cloudformation:stack-id",
+        "Value": "arn:aws:cloudformation:ap-northeast-1:078072735979:stack/MyPortfolioSandbox/31285c10-ba73-11f1-98a3-0a855e25cc89"
+      },
+      {
+        "Key": "aws:cloudformation:stack-name",
+        "Value": "MyPortfolioSandbox"
+      },
+      {
+        "Key": "aws:cloudformation:logical-id",
+        "Value": "RedirectBucket"
+      }
+    ]
+  },
+  "exclusions": [
+    "Route53 zone and records",
+    "Shared ACM certificate",
+    "Staging CloudFront distributions",
+    "Site objects and uploads"
+  ],
+  "notes": [
+    "No new S3 bucket, CloudFront distribution, OAC, KMS key, log, or compute resource was created.",
+    "Existing bootstrap S3 bucket received one generated template object during earlier CDK mapping preparation.",
+    "Import applied CloudFormation management tags to existing buckets; hosting settings and object content were unchanged.",
+    "AWS::S3::BucketPolicy does not support drift detection and was compared directly.",
+    "No application deployment, CloudFront invalidation, commit or push was performed."
+  ]
+}

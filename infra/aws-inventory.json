@@ -1,0 +1,503 @@
+{
+  "observedAt": "2026-09-27T21:43:00+09:00",
+  "account": "078072735979",
+  "region": "ap-northeast-1",
+  "siteDistribution": {
+    "Id": "E1DZXZ1TJCQU0K",
+    "ARN": "arn:aws:cloudfront::078072735979:distribution/E1DZXZ1TJCQU0K",
+    "Status": "Deployed",
+    "LastModifiedTime": "2025-06-01T23:09:12.853000+00:00",
+    "InProgressInvalidationBatches": 0,
+    "DomainName": "d1oehhy8ucl3ik.cloudfront.net",
+    "ActiveTrustedSigners": {
+      "Enabled": false,
+      "Quantity": 0
+    },
+    "ActiveTrustedKeyGroups": {
+      "Enabled": false,
+      "Quantity": 0
+    },
+    "DistributionConfig": {
+      "CallerReference": "7fc19e36-12f5-4227-a24e-c5a0f561ad62",
+      "Aliases": {
+        "Quantity": 1,
+        "Items": [
+          "www.hasutosasaki.com"
+        ]
+      },
+      "DefaultRootObject": "index.html",
+      "Origins": {
+        "Quantity": 1,
+        "Items": [
+          {
+            "Id": "hasuto.dev-site.s3.ap-northeast-1.amazonaws.com",
+            "DomainName": "www.hasutosasaki.com.s3.ap-northeast-1.amazonaws.com",
+            "OriginPath": "",
+            "CustomHeaders": {
+              "Quantity": 0
+            },
+            "S3OriginConfig": {
+              "OriginAccessIdentity": "",
+              "OriginReadTimeout": 30
+            },
+            "ConnectionAttempts": 3,
+            "ConnectionTimeout": 10,
+            "OriginShield": {
+              "Enabled": false
+            },
+            "OriginAccessControlId": "E163VYBXXAXG8G"
+          }
+        ]
+      },
+      "OriginGroups": {
+        "Quantity": 0
+      },
+      "DefaultCacheBehavior": {
+        "TargetOriginId": "hasuto.dev-site.s3.ap-northeast-1.amazonaws.com",
+        "TrustedSigners": {
+          "Enabled": false,
+          "Quantity": 0
+        },
+        "TrustedKeyGroups": {
+          "Enabled": false,
+          "Quantity": 0
+        },
+        "ViewerProtocolPolicy": "allow-all",
+        "AllowedMethods": {
+          "Quantity": 2,
+          "Items": [
+            "HEAD",
+            "GET"
+          ],
+          "CachedMethods": {
+            "Quantity": 2,
+            "Items": [
+              "HEAD",
+              "GET"
+            ]
+          }
+        },
+        "SmoothStreaming": false,
+        "Compress": true,
+        "LambdaFunctionAssociations": {
+          "Quantity": 0
+        },
+        "FunctionAssociations": {
+          "Quantity": 0
+        },
+        "FieldLevelEncryptionId": "",
+        "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+        "GrpcConfig": {
+          "Enabled": false
+        }
+      },
+      "CacheBehaviors": {
+        "Quantity": 0
+      },
+      "CustomErrorResponses": {
+        "Quantity": 0
+      },
+      "Comment": "",
+      "Logging": {
+        "Enabled": false,
+        "IncludeCookies": false,
+        "Bucket": "",
+        "Prefix": ""
+      },
+      "PriceClass": "PriceClass_All",
+      "Enabled": true,
+      "ViewerCertificate": {
+        "CloudFrontDefaultCertificate": false,
+        "ACMCertificateArn": "arn:aws:acm:us-east-1:078072735979:certificate/36626f96-fa83-4760-a30c-1dbb88f7179f",
+        "SSLSupportMethod": "sni-only",
+        "MinimumProtocolVersion": "TLSv1.2_2021",
+        "Certificate": "arn:aws:acm:us-east-1:078072735979:certificate/36626f96-fa83-4760-a30c-1dbb88f7179f",
+        "CertificateSource": "acm"
+      },
+      "Restrictions": {
+        "GeoRestriction": {
+          "RestrictionType": "none",
+          "Quantity": 0
+        }
+      },
+      "WebACLId": "",
+      "HttpVersion": "http2and3",
+      "IsIPV6Enabled": true,
+      "ContinuousDeploymentPolicyId": "",
+      "Staging": false
+    },
+    "AliasICPRecordals": [
+      {
+        "CNAME": "www.hasutosasaki.com",
+        "ICPRecordalStatus": "APPROVED"
+      }
+    ]
+  },
+  "redirectDistribution": {
+    "Id": "E2WBVFFV91A2DU",
+    "ARN": "arn:aws:cloudfront::078072735979:distribution/E2WBVFFV91A2DU",
+    "Status": "Deployed",
+    "LastModifiedTime": "2025-06-01T23:17:32.415000+00:00",
+    "InProgressInvalidationBatches": 0,
+    "DomainName": "d3r5vs7ofs62fk.cloudfront.net",
+    "ActiveTrustedSigners": {
+      "Enabled": false,
+      "Quantity": 0
+    },
+    "ActiveTrustedKeyGroups": {
+      "Enabled": false,
+      "Quantity": 0
+    },
+    "DistributionConfig": {
+      "CallerReference": "160af997-12ab-48de-b371-c4d5c4a8cca4",
+      "Aliases": {
+        "Quantity": 1,
+        "Items": [
+          "hasutosasaki.com"
+        ]
+      },
+      "DefaultRootObject": "",
+      "Origins": {
+        "Quantity": 1,
+        "Items": [
+          {
+            "Id": "hasutosasaki.com.s3-website-ap-northeast-1.amazonaws.com",
+            "DomainName": "hasutosasaki.com.s3-website-ap-northeast-1.amazonaws.com",
+            "OriginPath": "",
+            "CustomHeaders": {
+              "Quantity": 0
+            },
+            "CustomOriginConfig": {
+              "HTTPPort": 80,
+              "HTTPSPort": 443,
+              "OriginProtocolPolicy": "http-only",
+              "OriginSslProtocols": {
+                "Quantity": 4,
+                "Items": [
+                  "SSLv3",
+                  "TLSv1",
+                  "TLSv1.1",
+                  "TLSv1.2"
+                ]
+              },
+              "OriginReadTimeout": 30,
+              "OriginKeepaliveTimeout": 5
+            },
+            "ConnectionAttempts": 3,
+            "ConnectionTimeout": 10,
+            "OriginShield": {
+              "Enabled": false
+            },
+            "OriginAccessControlId": ""
+          }
+        ]
+      },
+      "OriginGroups": {
+        "Quantity": 0
+      },
+      "DefaultCacheBehavior": {
+        "TargetOriginId": "hasutosasaki.com.s3-website-ap-northeast-1.amazonaws.com",
+        "TrustedSigners": {
+          "Enabled": false,
+          "Quantity": 0
+        },
+        "TrustedKeyGroups": {
+          "Enabled": false,
+          "Quantity": 0
+        },
+        "ViewerProtocolPolicy": "allow-all",
+        "AllowedMethods": {
+          "Quantity": 2,
+          "Items": [
+            "HEAD",
+            "GET"
+          ],
+          "CachedMethods": {
+            "Quantity": 2,
+            "Items": [
+              "HEAD",
+              "GET"
+            ]
+          }
+        },
+        "SmoothStreaming": false,
+        "Compress": true,
+        "LambdaFunctionAssociations": {
+          "Quantity": 0
+        },
+        "FunctionAssociations": {
+          "Quantity": 0
+        },
+        "FieldLevelEncryptionId": "",
+        "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+        "GrpcConfig": {
+          "Enabled": false
+        }
+      },
+      "CacheBehaviors": {
+        "Quantity": 0
+      },
+      "CustomErrorResponses": {
+        "Quantity": 0
+      },
+      "Comment": "",
+      "Logging": {
+        "Enabled": false,
+        "IncludeCookies": false,
+        "Bucket": "",
+        "Prefix": ""
+      },
+      "PriceClass": "PriceClass_All",
+      "Enabled": true,
+      "ViewerCertificate": {
+        "CloudFrontDefaultCertificate": false,
+        "ACMCertificateArn": "arn:aws:acm:us-east-1:078072735979:certificate/36626f96-fa83-4760-a30c-1dbb88f7179f",
+        "SSLSupportMethod": "sni-only",
+        "MinimumProtocolVersion": "TLSv1.2_2021",
+        "Certificate": "arn:aws:acm:us-east-1:078072735979:certificate/36626f96-fa83-4760-a30c-1dbb88f7179f",
+        "CertificateSource": "acm"
+      },
+      "Restrictions": {
+        "GeoRestriction": {
+          "RestrictionType": "none",
+          "Quantity": 0
+        }
+      },
+      "WebACLId": "",
+      "HttpVersion": "http2",
+      "IsIPV6Enabled": true,
+      "ContinuousDeploymentPolicyId": "",
+      "Staging": false
+    },
+    "AliasICPRecordals": [
+      {
+        "CNAME": "hasutosasaki.com",
+        "ICPRecordalStatus": "APPROVED"
+      }
+    ]
+  },
+  "originAccessControl": {
+    "Id": "E163VYBXXAXG8G",
+    "OriginAccessControlConfig": {
+      "Name": "www.hasutosasaki.com.s3.ap-northeast-1.amazonaws.com",
+      "SigningProtocol": "sigv4",
+      "SigningBehavior": "always",
+      "OriginAccessControlOriginType": "s3"
+    }
+  },
+  "siteBucket": {
+    "name": "www.hasutosasaki.com",
+    "publicAccessBlock": {
+      "BlockPublicAcls": true,
+      "IgnorePublicAcls": true,
+      "BlockPublicPolicy": true,
+      "RestrictPublicBuckets": true
+    },
+    "encryption": {
+      "Rules": [
+        {
+          "ApplyServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+          },
+          "BucketKeyEnabled": true,
+          "BlockedEncryptionTypes": {
+            "EncryptionType": [
+              "SSE-C"
+            ]
+          }
+        }
+      ]
+    },
+    "ownership": {
+      "Rules": [
+        {
+          "ObjectOwnership": "BucketOwnerEnforced"
+        }
+      ]
+    },
+    "policy": {
+      "Version": "2008-10-17",
+      "Id": "PolicyForCloudFrontPrivateContent",
+      "Statement": [
+        {
+          "Sid": "AllowCloudFrontServicePrincipal",
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "cloudfront.amazonaws.com"
+          },
+          "Action": "s3:GetObject",
+          "Resource": "arn:aws:s3:::www.hasutosasaki.com/*",
+          "Condition": {
+            "StringEquals": {
+              "AWS:SourceArn": "arn:aws:cloudfront::078072735979:distribution/E1DZXZ1TJCQU0K"
+            }
+          }
+        }
+      ]
+    },
+    "versioning": {},
+    "logging": {},
+    "website": null,
+    "cors": null,
+    "lifecycle": null,
+    "tags": [],
+    "index": {
+      "AcceptRanges": "bytes",
+      "LastModified": "2025-06-08T06:32:31+00:00",
+      "ContentLength": 115526,
+      "ETag": "\"658e9dcb2f250d9f77f8c224098d1301\"",
+      "ContentType": "text/html",
+      "ServerSideEncryption": "AES256",
+      "Metadata": {}
+    }
+  },
+  "redirectBucket": {
+    "name": "hasutosasaki.com",
+    "publicAccessBlock": {
+      "BlockPublicAcls": true,
+      "IgnorePublicAcls": true,
+      "BlockPublicPolicy": true,
+      "RestrictPublicBuckets": true
+    },
+    "encryption": {
+      "Rules": [
+        {
+          "ApplyServerSideEncryptionByDefault": {
+            "SSEAlgorithm": "AES256"
+          },
+          "BucketKeyEnabled": true,
+          "BlockedEncryptionTypes": {
+            "EncryptionType": [
+              "SSE-C"
+            ]
+          }
+        }
+      ]
+    },
+    "ownership": {
+      "Rules": [
+        {
+          "ObjectOwnership": "BucketOwnerEnforced"
+        }
+      ]
+    },
+    "website": {
+      "RedirectAllRequestsTo": {
+        "HostName": "www.hasutosasaki.com",
+        "Protocol": "https"
+      }
+    },
+    "versioning": {},
+    "logging": {},
+    "policy": null,
+    "cors": null,
+    "lifecycle": null,
+    "tags": []
+  },
+  "cachePolicy": {
+    "Id": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+    "LastModifiedTime": "1970-01-01T00:00:00+00:00",
+    "CachePolicyConfig": {
+      "Comment": "Policy with caching enabled. Supports Gzip and Brotli compression.",
+      "Name": "Managed-CachingOptimized",
+      "DefaultTTL": 86400,
+      "MaxTTL": 31536000,
+      "MinTTL": 1,
+      "ParametersInCacheKeyAndForwardedToOrigin": {
+        "EnableAcceptEncodingGzip": true,
+        "EnableAcceptEncodingBrotli": true,
+        "HeadersConfig": {
+          "HeaderBehavior": "none"
+        },
+        "CookiesConfig": {
+          "CookieBehavior": "none"
+        },
+        "QueryStringsConfig": {
+          "QueryStringBehavior": "none"
+        }
+      }
+    }
+  },
+  "dns": [
+    {
+      "Name": "hasutosasaki.com.",
+      "Type": "A",
+      "AliasTarget": {
+        "HostedZoneId": "Z2FDTNDATAQYW2",
+        "DNSName": "d3r5vs7ofs62fk.cloudfront.net.",
+        "EvaluateTargetHealth": false
+      }
+    },
+    {
+      "Name": "hasutosasaki.com.",
+      "Type": "NS",
+      "TTL": 172800,
+      "ResourceRecords": [
+        {
+          "Value": "ns-782.awsdns-33.net."
+        },
+        {
+          "Value": "ns-1658.awsdns-15.co.uk."
+        },
+        {
+          "Value": "ns-1513.awsdns-61.org."
+        },
+        {
+          "Value": "ns-426.awsdns-53.com."
+        }
+      ]
+    },
+    {
+      "Name": "hasutosasaki.com.",
+      "Type": "SOA",
+      "TTL": 900,
+      "ResourceRecords": [
+        {
+          "Value": "ns-782.awsdns-33.net. awsdns-hostmaster.amazon.com. 1 7200 900 1209600 86400"
+        }
+      ]
+    },
+    {
+      "Name": "_125f8c9acd1fb334ed63ca2479a4725c.hasutosasaki.com.",
+      "Type": "CNAME",
+      "TTL": 300,
+      "ResourceRecords": [
+        {
+          "Value": "_f5599eb5cf5afe7abb9ca77cdc3b4d60.xlfgrmvvlj.acm-validations.aws."
+        }
+      ]
+    },
+    {
+      "Name": "www.hasutosasaki.com.",
+      "Type": "A",
+      "AliasTarget": {
+        "HostedZoneId": "Z2FDTNDATAQYW2",
+        "DNSName": "d1oehhy8ucl3ik.cloudfront.net.",
+        "EvaluateTargetHealth": false
+      }
+    },
+    {
+      "Name": "_8f4bfba2844fc033a649dfc4ae64ecd0.www.hasutosasaki.com.",
+      "Type": "CNAME",
+      "TTL": 300,
+      "ResourceRecords": [
+        {
+          "Value": "_007df5d3e50710c217be55b92b08f4ae.xlfgrmvvlj.acm-validations.aws."
+        }
+      ]
+    }
+  ],
+  "certificate": {
+    "arn": "arn:aws:acm:us-east-1:078072735979:certificate/36626f96-fa83-4760-a30c-1dbb88f7179f",
+    "status": "ISSUED",
+    "domains": [
+      "www.hasutosasaki.com",
+      "hasutosasaki.com"
+    ],
+    "notAfter": "2026-11-16T08:59:59+09:00"
+  },
+  "excludedStagingDistributions": [
+    "E1FR6WEFEJHY6F",
+    "E62688SIOC022"
+  ]
+}

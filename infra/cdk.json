@@ -1,0 +1,6 @@
+{
+  "app": "node app.cjs",
+  "pathMetadata": false,
+  "assetMetadata": false,
+  "versionReporting": false
+}
