@@ -1,0 +1,32 @@
+[
+  {
+    "ResourceType": "AWS::S3::Bucket",
+    "LogicalResourceId": "SiteBucket",
+    "ResourceIdentifier": { "BucketName": "www.hasutosasaki.com" }
+  },
+  {
+    "ResourceType": "AWS::S3::Bucket",
+    "LogicalResourceId": "RedirectBucket",
+    "ResourceIdentifier": { "BucketName": "hasutosasaki.com" }
+  },
+  {
+    "ResourceType": "AWS::CloudFront::OriginAccessControl",
+    "LogicalResourceId": "SiteOriginAccessControl",
+    "ResourceIdentifier": { "Id": "E163VYBXXAXG8G" }
+  },
+  {
+    "ResourceType": "AWS::CloudFront::Distribution",
+    "LogicalResourceId": "SiteDistribution",
+    "ResourceIdentifier": { "Id": "E1DZXZ1TJCQU0K" }
+  },
+  {
+    "ResourceType": "AWS::CloudFront::Distribution",
+    "LogicalResourceId": "RedirectDistribution",
+    "ResourceIdentifier": { "Id": "E2WBVFFV91A2DU" }
+  },
+  {
+    "ResourceType": "AWS::S3::BucketPolicy",
+    "LogicalResourceId": "SiteBucketPolicy",
+    "ResourceIdentifier": { "Bucket": "www.hasutosasaki.com" }
+  }
+]

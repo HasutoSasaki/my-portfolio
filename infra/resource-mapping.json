@@ -1,0 +1,20 @@
+{
+  "SiteBucket": {
+    "BucketName": "www.hasutosasaki.com"
+  },
+  "RedirectBucket": {
+    "BucketName": "hasutosasaki.com"
+  },
+  "SiteOriginAccessControl": {
+    "Id": "E163VYBXXAXG8G"
+  },
+  "SiteDistribution": {
+    "Id": "E1DZXZ1TJCQU0K"
+  },
+  "RedirectDistribution": {
+    "Id": "E2WBVFFV91A2DU"
+  },
+  "SiteBucketPolicy": {
+    "Bucket": "www.hasutosasaki.com"
+  }
+}
