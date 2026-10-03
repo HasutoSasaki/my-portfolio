@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   build:
-    if: github.repository == 'HasutoSasaki/my-portfolio' && github.ref == 'refs/heads/master'
+    if: github.repository == 'HasutoSasaki/my-portfolio'
     runs-on: ubuntu-latest
     permissions:
       contents: read
